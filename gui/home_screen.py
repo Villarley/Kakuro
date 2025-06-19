@@ -38,7 +38,7 @@ class HomeScreen(tk.Frame):
                 height=2,
                 command=command,
                 bg="#3a3a3a",
-                fg="white",
+                fg="#8A2BE2",
                 activebackground="#5e5e5e",
                 bd=0
             )
