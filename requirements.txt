@@ -1,0 +1,17 @@
+# Dependencias del proyecto Kakuro 2025
+# Python 3.7+ es requerido
+
+# Tkinter viene incluido con Python, no necesita instalación
+# Las siguientes dependencias son opcionales para funcionalidades adicionales
+
+# Para desarrollo y pruebas
+pytest>=6.0.0
+pytest-cov>=2.10.0
+
+# Para generación de documentación (opcional)
+sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0
+
+# Para análisis de código (opcional)
+flake8>=3.8.0
+black>=21.0.0 

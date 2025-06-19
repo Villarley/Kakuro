@@ -1,0 +1,88 @@
+{
+  "partidas": [
+    {
+      "id": "facil_001",
+      "nombre": "Kakuro Fácil 1",
+      "dificultad": "facil",
+      "tamaño": {
+        "filas": 5,
+        "columnas": 5
+      },
+      "tablero": [
+        ["#", "#", "#", "#", "#"],
+        ["#", "\\", "\\", "\\", "#"],
+        ["#", "\\", "?", "?", "\\"],
+        ["#", "\\", "?", "?", "\\"],
+        ["#", "#", "\\", "\\", "#"]
+      ],
+      "sumas_filas": [
+        [null, null, null, null, null],
+        [null, null, 15, 12, null],
+        [null, null, null, null, 8],
+        [null, null, null, null, 9],
+        [null, null, null, null, null]
+      ],
+      "sumas_columnas": [
+        [null, null, null, null, null],
+        [null, null, 8, 9, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null]
+      ],
+      "solucion": [
+        ["#", "#", "#", "#", "#"],
+        ["#", "\\", "\\", "\\", "#"],
+        ["#", "\\", "3", "5", "\\"],
+        ["#", "\\", "5", "4", "\\"],
+        ["#", "#", "\\", "\\", "#"]
+      ],
+      "tiempo_estimado": 300
+    },
+    {
+      "id": "normal_001",
+      "nombre": "Kakuro Normal 1",
+      "dificultad": "normal",
+      "tamaño": {
+        "filas": 7,
+        "columnas": 7
+      },
+      "tablero": [
+        ["#", "#", "#", "#", "#", "#", "#"],
+        ["#", "\\", "\\", "#", "\\", "\\", "#"],
+        ["#", "\\", "?", "?", "?", "?", "\\"],
+        ["#", "#", "\\", "?", "?", "\\", "#"],
+        ["#", "\\", "?", "?", "?", "?", "\\"],
+        ["#", "\\", "?", "?", "?", "?", "\\"],
+        ["#", "#", "#", "#", "#", "#", "#"]
+      ],
+      "sumas_filas": [
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 16],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 12],
+        [null, null, null, null, null, null, 15],
+        [null, null, null, null, null, null, null]
+      ],
+      "sumas_columnas": [
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null]
+      ],
+      "solucion": [
+        ["#", "#", "#", "#", "#", "#", "#"],
+        ["#", "\\", "\\", "#", "\\", "\\", "#"],
+        ["#", "\\", "1", "2", "3", "4", "\\"],
+        ["#", "#", "\\", "5", "6", "\\", "#"],
+        ["#", "\\", "7", "8", "9", "1", "\\"],
+        ["#", "\\", "2", "3", "4", "5", "\\"],
+        ["#", "#", "#", "#", "#", "#", "#"]
+      ],
+      "tiempo_estimado": 600
+    }
+  ]
+} 

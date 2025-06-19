@@ -1,0 +1,27 @@
+# Documentación del Proyecto Kakuro 2025
+
+Este archivo será reemplazado por la documentación técnica completa del proyecto.
+
+## Estructura del Proyecto
+
+- **gui/**: Interfaz gráfica de usuario
+- **logic/**: Lógica del juego y validaciones
+- **utils/**: Utilidades y manejo de archivos
+- **data/**: Datos del juego (partidas, configuración, récords)
+- **tests/**: Pruebas unitarias
+- **docs/**: Documentación del proyecto
+
+## Tecnologías Utilizadas
+
+- Python 3.x
+- Tkinter para la interfaz gráfica
+- JSON para persistencia de datos
+- Threading para manejo de tiempo
+
+## Arquitectura
+
+El proyecto sigue una arquitectura modular con separación clara de responsabilidades:
+- Separación entre lógica de negocio e interfaz de usuario
+- Manejo de estado centralizado
+- Sistema de persistencia de datos
+- Validaciones robustas del juego 

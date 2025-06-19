@@ -1,0 +1,30 @@
+# Manual de Usuario - Kakuro 2025
+
+Este archivo será reemplazado por el manual completo de usuario.
+
+## Cómo Jugar Kakuro
+
+### Objetivo
+Completar el tablero con números del 1 al 9 de manera que:
+- Cada fila y columna sume el valor indicado
+- No se repitan números en la misma fila o columna
+- Solo se usen números del 1 al 9
+
+### Controles
+- **Clic izquierdo**: Seleccionar celda
+- **Teclas numéricas**: Insertar número
+- **Backspace/Delete**: Borrar número
+- **Ctrl+Z**: Deshacer jugada
+- **Ctrl+Y**: Rehacer jugada
+
+### Niveles de Dificultad
+- **Fácil**: Tableros pequeños, muchas pistas
+- **Normal**: Tableros medianos, pistas moderadas
+- **Difícil**: Tableros grandes, pocas pistas
+
+### Funciones
+- Guardar partida
+- Cargar partida guardada
+- Ver récords
+- Configurar preferencias
+- Cronómetro opcional 

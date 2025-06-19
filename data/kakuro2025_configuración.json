@@ -1,0 +1,8 @@
+{
+  "configuracion": {
+    "tema": "claro",
+    "sonido": true,
+    "dificultad": "normal",
+    "tiempo_limite": 300
+  }
+} 
