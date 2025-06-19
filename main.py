@@ -10,7 +10,7 @@ import os
 # Añadir el directorio actual al path para importar módulos
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from gui.main_window import MainWindow
+from gui.home_screen import MainWindow
 from logic.game_manager import GameManager
 from utils.file_manager import FileManager
 
