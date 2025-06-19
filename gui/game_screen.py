@@ -1,4 +1,5 @@
 import tkinter as tk
+from gui.components.cell_components import create_white_cell, create_black_cell, create_key_cell
 
 
 class GameScreen(tk.Frame):
@@ -31,21 +32,27 @@ class GameScreen(tk.Frame):
         body_frame = tk.Frame(self, bg="#1e1e1e")
         body_frame.pack(pady=10)
 
-        # 🧩 Tablero (solo visual, sin lógica)
+        # 🧩 Tablero (visual, usando cell_components)
         board_frame = tk.Frame(body_frame, bg="#000000")
         board_frame.pack(side=tk.LEFT, padx=20)
 
         for row in range(9):
             for col in range(9):
-                cell = tk.Label(
-                    board_frame,
-                    text="",  # Aquí pondremos claves más adelante
-                    width=4,
-                    height=2,
-                    borderwidth=1,
-                    relief="solid",
-                    bg="white"
-                )
+                # Celdas negras sin clave
+                if (row, col) in [(0, 0), (0, 1), (1, 0)]:
+                    cell = create_black_cell(board_frame)
+                # Celda con clave fila y columna
+                elif (row, col) == (0, 2):
+                    cell = create_key_cell(board_frame, clave_fila=10, clave_columna=36)
+                # Celda con solo clave de fila
+                elif (row, col) == (2, 0):
+                    cell = create_key_cell(board_frame, clave_fila=15)
+                # Celda con solo clave de columna
+                elif (row, col) == (1, 2):
+                    cell = create_key_cell(board_frame, clave_columna=9)
+                # El resto son celdas blancas
+                else:
+                    cell = create_white_cell(board_frame)
                 cell.grid(row=row, column=col, padx=1, pady=1)
 
         # 🎯 Panel lateral de números

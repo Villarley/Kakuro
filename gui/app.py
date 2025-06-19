@@ -8,8 +8,17 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Kakuro 2025")
-        self.geometry("800x600")
-        self.resizable(False, False)
+        self.geometry("800x600")  # Tamaño por defecto
+        
+        # Permitir redimensionamiento de la ventana
+        self.resizable(True, True)  # Ahora la ventana se puede redimensionar
+        self.minsize(800, 600)      # Tamaño mínimo permitido
+
+        # Abrir en modo fullscreen al iniciar
+        self.attributes("-fullscreen", True)
+
+        # Permitir salir de fullscreen con la tecla Escape
+        self.bind("<Escape>", lambda e: self.attributes("-fullscreen", False))
 
         # Diccionario de pantallas
         self.frames = {}
