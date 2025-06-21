@@ -6,15 +6,18 @@ Funciones modulares para crear diferentes tipos de celdas del juego
 import tkinter as tk
 
 
-def create_white_cell(parent):
+def create_white_cell(parent, row, col, command=None):
     """
     Crea una celda blanca editable para el tablero de Kakuro.
     
     Args:
         parent: Widget padre donde se creará la celda
+        row: Fila de la celda
+        col: Columna de la celda
+        command (function, optional): Función a ejecutar al hacer clic en la celda
         
     Returns:
-        tk.Label: Celda blanca con borde, lista para ser editable
+        tk.Button: Celda blanca con borde, lista para ser editable
         
     Características:
         - Fondo blanco
@@ -22,30 +25,32 @@ def create_white_cell(parent):
         - Borde visible
         - Preparada para ser editable posteriormente
     """
-    cell = tk.Label(
+    btn = tk.Button(
         parent,
-        text="",
-        width=6,  # Aproximadamente 45px
-        height=3,  # Aproximadamente 45px
+        width=5,
+        height=2,
+        font=("Segoe UI", 12, "bold"),
         bg="white",
         fg="black",
         relief="solid",
-        borderwidth=1,
-        font=("Arial", 12, "bold"),
-        anchor="center"
+        bd=1,
+        command=command if command else lambda: None
     )
-    return cell
+    btn.grid(row=row, column=col, padx=1, pady=1)
+    return btn
 
 
-def create_black_cell(parent):
+def create_black_cell(parent, row, col):
     """
     Crea una celda negra bloqueada para el tablero de Kakuro.
     
     Args:
         parent: Widget padre donde se creará la celda
+        row: Fila de la celda
+        col: Columna de la celda
         
     Returns:
-        tk.Canvas: Celda negra completamente bloqueada
+        tk.Label: Celda negra completamente bloqueada
         
     Características:
         - Fondo completamente negro
@@ -53,67 +58,48 @@ def create_black_cell(parent):
         - Representa una celda bloqueada/imposible
         - Tamaño estándar 45x45px
     """
-    cell = tk.Canvas(
+    lbl = tk.Label(
         parent,
-        width=45,
-        height=45,
+        width=5,
+        height=2,
+        font=("Segoe UI", 12, "bold"),
         bg="black",
-        highlightthickness=0,
+        fg="white",
         relief="flat"
     )
-    return cell
+    lbl.grid(row=row, column=col, padx=1, pady=1)
+    return lbl
 
 
-def create_key_cell(parent, clave_fila=None, clave_columna=None):
+def create_key_cell(parent, row, col, text):
     """
     Crea una celda con claves (números objetivo) para filas y columnas.
     
     Args:
         parent: Widget padre donde se creará la celda
-        clave_fila (int, optional): Número objetivo para la fila (parte superior derecha)
-        clave_columna (int, optional): Número objetivo para la columna (parte inferior izquierda)
+        row: Fila de la celda
+        col: Columna de la celda
+        text: Texto a mostrar en la celda
         
     Returns:
-        tk.Canvas: Celda negra con línea diagonal y claves numéricas
+        tk.Label: Celda con claves numéricas
         
     Características:
-        - Fondo negro
-        - Línea diagonal '/' de esquina superior izquierda a inferior derecha
-        - Clave de fila en la parte superior derecha (si se proporciona)
-        - Clave de columna en la parte inferior izquierda (si se proporciona)
-        - Texto blanco sobre fondo negro
+        - Fondo gris claro
+        - Texto en negrita
+        - Borde visible
         - Tamaño estándar 45x45px
     """
-    cell = tk.Canvas(
+    lbl = tk.Label(
         parent,
-        width=45,
-        height=45,
-        bg="black",
-        highlightthickness=0,
-        relief="flat"
+        width=5,
+        height=2,
+        font=("Segoe UI", 12, "bold"),
+        bg="#bdbdbd",
+        fg="black",
+        text=text,
+        relief="ridge",
+        bd=1
     )
-    
-    # Dibujar línea diagonal
-    cell.create_line(0, 0, 45, 45, fill="white", width=2)
-    
-    # Dibujar clave de fila (parte superior derecha)
-    if clave_fila is not None:
-        cell.create_text(
-            35, 12,  # Posición en la parte superior derecha
-            text=str(clave_fila),
-            fill="white",
-            font=("Arial", 8, "bold"),
-            anchor="center"
-        )
-    
-    # Dibujar clave de columna (parte inferior izquierda)
-    if clave_columna is not None:
-        cell.create_text(
-            12, 35,  # Posición en la parte inferior izquierda
-            text=str(clave_columna),
-            fill="white",
-            font=("Arial", 8, "bold"),
-            anchor="center"
-        )
-    
-    return cell 
+    lbl.grid(row=row, column=col, padx=1, pady=1)
+    return lbl 

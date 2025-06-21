@@ -1,0 +1,36 @@
+{
+    "FÁCIL": [
+        {
+            "jugador": "Test",
+            "tiempo": 0,
+            "fecha": "2025-06-20 00:07:34"
+        },
+        {
+            "jugador": "Bob",
+            "tiempo": 900,
+            "fecha": "2025-06-20 00:06:39"
+        },
+        {
+            "jugador": "Alice",
+            "tiempo": 1200,
+            "fecha": "2025-06-20 00:06:39"
+        }
+    ],
+    "MEDIO": [
+        {
+            "jugador": "Eve",
+            "tiempo": 2100,
+            "fecha": "2025-06-20 00:06:39"
+        },
+        {
+            "jugador": "David",
+            "tiempo": 2400,
+            "fecha": "2025-06-20 00:06:39"
+        },
+        {
+            "jugador": "María",
+            "tiempo": 2700,
+            "fecha": "2025-06-20 00:07:34"
+        }
+    ]
+}

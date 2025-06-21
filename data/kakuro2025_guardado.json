@@ -1,0 +1,145 @@
+{
+    "nivel": "FÁCIL",
+    "partida": 1,
+    "tablero": [
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            5,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    ],
+    "claves": [
+        {
+            "tipo_de_clave": "F",
+            "fila": 3,
+            "columna": 2,
+            "clave": 0,
+            "casillas": 2
+        },
+        {
+            "tipo_de_clave": "F",
+            "fila": 4,
+            "columna": 2,
+            "clave": 0,
+            "casillas": 2
+        },
+        {
+            "tipo_de_clave": "C",
+            "fila": 2,
+            "columna": 3,
+            "clave": 8,
+            "casillas": 2
+        },
+        {
+            "tipo_de_clave": "C",
+            "fila": 2,
+            "columna": 4,
+            "clave": 9,
+            "casillas": 2
+        }
+    ],
+    "reloj": "SIN RELOJ",
+    "tiempo_restante": {
+        "horas": 0,
+        "minutos": 0,
+        "segundos": 0
+    },
+    "fecha_guardado": "2025-01-01",
+    "jugador": "",
+    "historial_jugadas": 3,
+    "historial_rehacer": 0
+}
