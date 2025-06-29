@@ -217,9 +217,23 @@ class GameScreen(tk.Frame):
             self.partida_data = load_random_partida(nivel)
             
             if not self.partida_data:
-                # Si no se pudo cargar la partida, mostrar error
-                self.show_error_message("No se pudo cargar una partida válida para el nivel actual.")
-                return
+                # Si no se pudo cargar la partida, intentar con un nivel diferente
+                print(f"No hay partidas disponibles para el nivel: {nivel}")
+                
+                # Intentar con otros niveles en orden de preferencia
+                niveles_alternativos = ["FÁCIL", "MEDIO", "DIFÍCIL", "EXPERTO"]
+                for nivel_alt in niveles_alternativos:
+                    if nivel_alt != nivel:
+                        print(f"Intentando cargar partida para nivel: {nivel_alt}")
+                        self.partida_data = load_random_partida(nivel_alt)
+                        if self.partida_data:
+                            print(f"Partida cargada para nivel alternativo: {nivel_alt}")
+                            break
+                
+                if not self.partida_data:
+                    # Si no se pudo cargar ninguna partida, mostrar error
+                    self.show_error_message("No se pudo cargar una partida válida. Verifica que el archivo de partidas contenga datos.")
+                    return
                 
             print(f"Partida cargada: {self.partida_data['nivel_de_dificultad']} - Partida {self.partida_data['partida']}")
             print(f"Número de claves: {len(self.partida_data['claves'])}")
@@ -251,11 +265,7 @@ class GameScreen(tk.Frame):
         Crea un tablero 9x9 con celdas blancas bloqueadas por defecto,
         luego sobreescribe posiciones según las claves del juego.
         """
-        if not self.partida_data:
-            return
-            
-        # Crear matriz para almacenar referencias a las celdas blancas
-        # Por ahora todas las celdas blancas están bloqueadas (solo visuales)
+        # Siempre inicializar celdas_blancas, incluso si no hay partida_data
         self.celdas_blancas = [[None for _ in range(self.board_size)] for _ in range(self.board_size)]
         
         # Paso 1: Crear tablero 9x9 con celdas blancas bloqueadas por defecto
@@ -273,22 +283,33 @@ class GameScreen(tk.Frame):
                 white.grid(row=fila, column=columna)
                 self.celdas_blancas[fila][columna] = white
         
-        # Paso 2: Sobreescribir posiciones según las claves del juego
-        self.apply_game_claves()
-        
-        print(f"Tablero 9x9 construido con {len(self.partida_data['claves'])} claves")
+        # Paso 2: Si hay datos de partida, sobreescribir posiciones según las claves del juego
+        if self.partida_data and self.partida_data.get('claves'):
+            self.apply_game_claves()
+            print(f"Tablero 9x9 construido con {len(self.partida_data['claves'])} claves")
+        else:
+            print("Tablero 9x9 construido sin claves (modo demo)")
 
     def apply_game_claves(self):
         """
         Aplica las claves del juego al tablero, sobreescribiendo las celdas blancas
         con celdas negras o celdas con claves según corresponda.
         """
+        if not self.partida_data or not self.partida_data.get('claves'):
+            print("No hay claves para aplicar al tablero")
+            return
+            
         for clave in self.partida_data["claves"]:
             fila = clave["fila"] - 1  # Convertir a índice base 0
             columna = clave["columna"] - 1
             tipo_clave = clave["tipo_de_clave"]
             valor_clave = clave["clave"]
             casillas = clave["casillas"]
+            
+            # Verificar que los índices estén dentro del rango del tablero
+            if fila < 0 or fila >= self.board_size or columna < 0 or columna >= self.board_size:
+                print(f"Índice fuera de rango: fila={fila}, columna={columna}")
+                continue
             
             # Destruir la celda blanca existente en esta posición
             if self.celdas_blancas[fila][columna]:
