@@ -1,7 +1,18 @@
 {
-    "nivel": "FÁCIL",
+    "nivel": "MEDIO",
     "partida": 1,
     "tablero": [
+        [
+            3,
+            null,
+            null,
+            6,
+            null,
+            null,
+            null,
+            null,
+            5
+        ],
         [
             null,
             null,
@@ -15,39 +26,17 @@
         ],
         [
             null,
+            null,
+            null,
+            9,
             null,
             null,
             null,
             3,
-            null,
-            5,
-            null,
             null
         ],
         [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-        ],
-        [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-        ],
-        [
-            null,
+            4,
             null,
             null,
             null,
@@ -73,10 +62,10 @@
             null,
             null,
             null,
+            6,
             null,
-            1,
             null,
-            null,
+            8,
             null
         ],
         [
@@ -85,9 +74,20 @@
             null,
             null,
             null,
+            4,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            9,
             null,
             null,
             null,
+            null,
+            8,
             null
         ],
         [
@@ -108,38 +108,68 @@
             "fila": 3,
             "columna": 2,
             "clave": 0,
-            "casillas": 2
+            "casillas": 4
         },
         {
             "tipo_de_clave": "F",
             "fila": 4,
+            "columna": 3,
+            "clave": 0,
+            "casillas": 2
+        },
+        {
+            "tipo_de_clave": "F",
+            "fila": 5,
             "columna": 2,
+            "clave": 0,
+            "casillas": 4
+        },
+        {
+            "tipo_de_clave": "F",
+            "fila": 6,
+            "columna": 2,
+            "clave": 0,
+            "casillas": 4
+        },
+        {
+            "tipo_de_clave": "C",
+            "fila": 2,
+            "columna": 3,
+            "clave": 0,
+            "casillas": 1
+        },
+        {
+            "tipo_de_clave": "C",
+            "fila": 4,
+            "columna": 3,
             "clave": 0,
             "casillas": 2
         },
         {
             "tipo_de_clave": "C",
             "fila": 2,
-            "columna": 3,
-            "clave": 8,
-            "casillas": 2
+            "columna": 5,
+            "clave": 0,
+            "casillas": 4
         },
         {
             "tipo_de_clave": "C",
             "fila": 2,
-            "columna": 4,
-            "clave": 9,
+            "columna": 6,
+            "clave": 0,
+            "casillas": 1
+        },
+        {
+            "tipo_de_clave": "C",
+            "fila": 4,
+            "columna": 6,
+            "clave": 0,
             "casillas": 2
         }
     ],
     "reloj": "SIN RELOJ",
-    "tiempo_restante": {
-        "horas": 0,
-        "minutos": 0,
-        "segundos": 0
-    },
     "fecha_guardado": "2025-01-01",
-    "jugador": "",
-    "historial_jugadas": 3,
+    "jugador": "Santiago",
+    "historial_jugadas": 0,
     "historial_rehacer": 0
 }
